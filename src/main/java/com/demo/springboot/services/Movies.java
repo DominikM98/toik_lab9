@@ -30,6 +30,8 @@ public class Movies implements MoviesInterface {
     }
 
     public MovieListDto getMovies(){
+        moviesList.sort((a,b) -> b.getMovieId().compareTo(a.getMovieId()));
+        movies = new MovieListDto(moviesList);
         return movies;
     }
 
